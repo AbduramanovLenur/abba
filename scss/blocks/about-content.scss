@@ -1,0 +1,43 @@
+.about-content {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("./../images/about/gradient.webp");
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    @media (max-width: 1024px) {
+      gap: 50px;
+    }
+    @media (max-width: 768px) {
+      gap: 30px;
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+    @media (max-width: 480px) {
+      gap: 24px;
+    }
+  }
+  &__wrapper {
+    max-width: 535px;
+    @media (max-width: 1024px) {
+      max-width: 50%;
+    }
+    @media (max-width: 600px) {
+      max-width: 100%;
+    }
+  }
+  &__text {
+    color: #717171;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  &__picture {
+    border-radius: 32px;
+    overflow: hidden;
+  }
+}

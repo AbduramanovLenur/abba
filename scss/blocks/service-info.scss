@@ -1,0 +1,50 @@
+.service-info {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./../images/single-main-service/bg.webp");
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 126px;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 50px;
+    }
+    @media (max-width: 768px) {
+      gap: 24px;
+    }
+  }
+  &__picture {
+    @media (max-width: 1024px) {
+      max-width: 70%;
+    }
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+  &__content {
+    max-width: 746px;
+    @media (max-width: 1024px) {
+      max-width: 100%;
+    }
+  }
+  &__title {
+    @media (max-width: 1024px) {
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
+  &__text {
+    @media (max-width: 1024px) {
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+}

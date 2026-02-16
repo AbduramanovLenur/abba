@@ -1,0 +1,17 @@
+.service-solutions {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__text {
+    max-width: 796px;
+    text-align: center;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}

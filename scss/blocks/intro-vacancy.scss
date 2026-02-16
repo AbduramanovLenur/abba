@@ -1,0 +1,50 @@
+.intro-vacancy {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/vacancies/single-vacancy-bg.webp");
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--blue);
+    margin-bottom: 24px;
+    height: 40px;
+    border-radius: 51px;
+    padding: 0 24px;
+    border: 2px solid var(--blue);
+    max-width: max-content;
+    @media (max-width: 1024px) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: 480px) {
+      margin-bottom: 16px;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  &__text {
+    max-width: 755px;
+    color: #717171;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+  &__salary {
+    color: var(--blue);
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/fonts.min.css" />
+    <link rel="stylesheet" href="./css/variables.min.css" />
+    <link rel="stylesheet" href="./css/globals.min.css" />
+    <link rel="stylesheet" href="./css/single-service.min.css" />
+    <title>Abba Single Service File</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header padding-inline-container">
+        <div class="container">
+          <div class="header__inner">
+            <a class="header__logo" href="#">
+              <img
+                src="./images/header/blue-logo.svg"
+                alt="abba marketing"
+                loading="lazy"
+                width="216"
+                height="64"
+              />
+              <span class="sr-only"> abba marketing </span>
+            </a>
+            <nav class="header__nav">
+              <ul class="header__list">
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    Портфолио
+                    <span class="header__link-arrow"></span>
+                  </a>
+                  <!-- <ul class="header__sub-list">
+                    <li class="header__sub-item">
+                      <a class="header__sub-link" href="#">
+                        Маркетинговое исследование
+                      </a>
+                      <ul class="header__sub-sub-list">
+                        <li class="header__sub-sub-item">
+                          <a class="header__sub-sub-link" href="#">
+                            Анализ рынка
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    Услуги
+                    <span class="header__link-arrow"></span>
+                  </a>
+                  <!-- <ul class="header__sub-list">
+                    <li class="header__sub-item">
+                      <a class="header__sub-link" href="#">
+                        Маркетинговое исследование
+                      </a>
+                      <ul class="header__sub-sub-list">
+                        <li class="header__sub-sub-item">
+                          <a class="header__sub-sub-link" href="#">
+                            Анализ рынка
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    Новости
+                    <span class="header__link-arrow"></span>
+                  </a>
+                  <!-- <ul class="header__sub-list">
+                    <li class="header__sub-item">
+                      <a class="header__sub-link" href="#">
+                        Маркетинговое исследование
+                      </a>
+                      <ul class="header__sub-sub-list">
+                        <li class="header__sub-sub-item">
+                          <a class="header__sub-sub-link" href="#">
+                            Анализ рынка
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#">
+                    Контакты
+                    <span class="header__link-arrow"></span>
+                  </a>
+                  <!-- <ul class="header__sub-list">
+                    <li class="header__sub-item">
+                      <a class="header__sub-link" href="#">
+                        Маркетинговое исследование
+                      </a>
+                      <ul class="header__sub-sub-list">
+                        <li class="header__sub-sub-item">
+                          <a class="header__sub-sub-link" href="#">
+                            Анализ рынка
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul> -->
+                </li>
+              </ul>
+            </nav>
+            <a class="header__mail bg-filter" href="mailto:example@gmail.com">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.834 3.333H4.167a2.5 2.5 0 0 0-2.5 2.5v8.334a2.5 2.5 0 0 0 2.5 2.5h11.667a2.5 2.5 0 0 0 2.5-2.5V5.833a2.5 2.5 0 0 0-2.5-2.5ZM15.492 5l-4.9 4.9a.833.833 0 0 1-1.183 0L4.509 5h10.983Zm1.175 9.167a.833.833 0 0 1-.833.833H4.167a.833.833 0 0 1-.833-.833V6.175l4.9 4.9a2.5 2.5 0 0 0 3.533 0l4.9-4.9v7.992Z" fill="none"/>
+              </svg>
+            </a>
+            <a class="header__phone bg-filter" href="tel:+123456789">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2 10.833c-.183 0-.375-.058-.558-.1a7.861 7.861 0 0 1-1.092-.325 1.667 1.667 0 0 0-2.067.834l-.183.375a10.148 10.148 0 0 1-2.217-1.667 10.15 10.15 0 0 1-1.666-2.217l.35-.233A1.667 1.667 0 0 0 9.6 5.433a8.609 8.609 0 0 1-.325-1.091 6.18 6.18 0 0 1-.1-.567 2.5 2.5 0 0 0-2.5-2.075h-2.5a2.5 2.5 0 0 0-2.5 2.842 15.833 15.833 0 0 0 13.767 13.716h.316a2.5 2.5 0 0 0 2.285-1.481 2.5 2.5 0 0 0 .215-1.027v-2.5a2.5 2.5 0 0 0-2.058-2.417Zm.416 5a.834.834 0 0 1-.602.802.875.875 0 0 1-.364.032A14.167 14.167 0 0 1 3.392 4.35a.908.908 0 0 1 .208-.683.833.833 0 0 1 .625-.284h2.5a.833.833 0 0 1 .833.659c.034.227.075.452.125.675.096.439.225.87.384 1.291L6.9 6.55a.834.834 0 0 0-.408 1.108 12.075 12.075 0 0 0 5.833 5.834c.203.083.43.083.633 0a.835.835 0 0 0 .475-.434l.517-1.166c.43.154.87.282 1.317.383.222.05.447.092.675.125a.833.833 0 0 1 .658.833l.016 2.6Z" fill="none"/>
+              </svg>
+            </a>
+            <div class="header__langs dropdown bg-filter" id="langDropdown">
+              <button class="dropdown__toggle header__langs-toggle">
+                <img src="./images/icons/ru.svg" alt="RU" loading="lazy" width="21" height="15">
+                <span class="dropdown__selected header__langs-selected">RU</span>
+                <span class="dropdown__arrow header__langs-arrow"></span>
+              </button>
+            
+              <ul class="dropdown__menu header__langs-menu">
+                <li class="dropdown__item header__langs-item" data-value="RU">
+                  <img src="./images/icons/ru.svg" alt="RU" loading="lazy" width="21" height="15">
+                  RU
+                </li>
+                <li class="dropdown__item header__langs-item" data-value="UZ">
+                  <img src="./images/icons/uz.svg" alt="UZ" loading="lazy" width="21" height="15">
+                  UZ
+                </li>
+                <li class="dropdown__item header__langs-item" data-value="EN">
+                  <img src="./images/icons/en.svg" alt="EN" loading="lazy" width="21" height="15">
+                  EN
+                </li>
+              </ul>
+            </div>
+            <a class="header__presentation bg-filter" href="google.com" download">Скачать презентацию</a>
+            <a class="header__callback button-primary" href="#">
+              Обсудить проект
+            </a>
+            <div class="header__burger bg-filter">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="intro padding-inline-container" style="background-image: url('./images/single-main-service/intro.webp');">
+          <div class="container">
+            <div class="intro__inner">
+              <div class="intro__content">
+                <h1 class="intro__title">
+                  Маркетинговое
+                  <br> Исследование
+                </h1>
+                <div class="intro__text">
+                  Риск и устойчивость. Мы превращаем неопределенность в четкий план действий. Глубокий анализ рынка, конкурентов и потребителей для создания стратегии, которая работает.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="service-info padding-inline-container">
+          <div class="container">
+            <div class="service-info__inner padding-section-block-container">
+              <div class="service-info__picture">
+                <img 
+                  src="./images/single-main-service/info.webp" 
+                  alt="Почему нужно маркетинговое исследование"
+                  loading="lazy"
+                  width="848"
+                  height="582"
+                >
+              </div>
+              <div class="service-info__content">
+                <h2 class="service-info__title section-title mb-sm">
+                  Почему нужно маркетинговое исследование
+                </h2>
+                <p class="service-info__text">
+                  Маркетинговое исследование является важным инструментом для бизнеса, поскольку оно помогает понять потребности и предпочтения целевой аудитории. Благодаря таким исследованиям компании могут выявить рыночные тенденции, оценить конкурентную среду и определить наиболее эффективные стратегии для продвижения своих товаров или услуг.
+                  <br>
+                  <br>
+                  Кроме того, маркетинговое исследование позволяет минимизировать риски, связанные с запуском новых продуктов, и способствует более точному планированию бюджета. В конечном итоге, это помогает компаниям принимать обоснованные решения и достигать своих бизнес-целей.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="service-solutions padding-inline-container">
+          <div class="container">
+            <div class="service-solutions__inner padding-big-block-container">
+              <h2 class="service-solutions__title section-title mb-sm">
+                Наши услуги
+              </h2>
+              <div class="service-solutions__text mb-md">
+                Экспертиза, проверенная временем и доверием лидеров рынка. Мы работаем с ключевыми игроками в различных индустриях.
+              </div>
+              <ul class="service-solutions__list grid-3">
+                <li class="service-solutions__item">
+                  <div class="content-box">
+                    <div class="content-wrapper">
+                      <div class="content-icon">
+                        <img 
+                          src="./images/icons/advantage.svg" 
+                          alt="Клиент"
+                          loading="lazy"
+                          width="48"
+                          height="48"
+                        >
+                      </div>
+                      <h3 class="content-label">
+                        Клиент
+                      </h3>
+                    </div>
+                    <p class="content-text">
+                      Быстрый анализ текущей ситуации и тактические решения для немедленного внедрения.
+                    </p>
+                  </div>
+                </li>
+                <li class="service-solutions__item">
+                  <div class="content-box">
+                    <div class="content-wrapper">
+                      <div class="content-icon">
+                        <img 
+                          src="./images/icons/advantage.svg" 
+                          alt="Клиент"
+                          loading="lazy"
+                          width="48"
+                          height="48"
+                        >
+                      </div>
+                      <h3 class="content-label">
+                        Клиент
+                      </h3>
+                    </div>
+                    <p class="content-text">
+                      Быстрый анализ текущей ситуации и тактические решения для немедленного внедрения.
+                    </p>
+                  </div>
+                </li>
+                <li class="service-solutions__item grid-full">
+                  <div class="content-box">
+                    <div class="content-wrapper">
+                      <div class="content-icon">
+                        <img 
+                          src="./images/icons/advantage.svg" 
+                          alt="Клиент"
+                          loading="lazy"
+                          width="48"
+                          height="48"
+                        >
+                      </div>
+                      <h3 class="content-label">
+                        Клиент
+                      </h3>
+                    </div>
+                    <p class="content-text">
+                      Быстрый анализ текущей ситуации и тактические решения для немедленного внедрения.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="price padding-inline-container">
+          <div class="container">
+            <div class="price__inner padding-big-block-container">
+              <div class="price__content">
+                <h2 class="price__title section-title mb-sm">
+                  Цены на услуги
+                </h2>
+                <p class="price__text">
+                  Цены на услуги нашей компании зависят от типа и объема работы. Мы предлагаем конкурентоспособные расценки, отражающие высокое качество и профессионализм. Для подробной информации о ценах и пакетах, свяжитесь с нами.
+                </p>
+              </div>
+              <div class="price__wrapper">
+                <div class="price__value">
+                  От $2000
+                </div>
+                <div class="price__description">
+                  У нас есть дополнительное предложение для вас)
+                </div>
+                <a class="price__button button-primary" href="#">
+                  Обсудить проект
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="selected-cases padding-inline-container">
+          <div class="container">
+            <div class="selected-cases__inner padding-section-block-container">
+              <div class="selected-cases__top mb-md">
+                <h2 class="selected-cases__title section-title">
+                  Избранные кейсы
+                </h2>
+                <a class="selected-cases__link-first button-primary" href="#">
+                  Посмотреть кейсы
+                  <span>
+                    <img 
+                      src="./images/icons/arrow-right-white.svg" 
+                      alt="arrow" 
+                      loading="lazy" 
+                      width="20" 
+                      height="20"
+                    >
+                  </span>
+                </a>
+              </div>
+              <!-- <div class="selected-cases__description mb-md">
+                Прежде чем писать код, мы проектируем логику. Это как чертеж для архитектора. Мы продумываем путь пользователя (CJM), чтобы каждый клик вел к цели.
+              </div> -->
+              <ul class="selected-cases__list">
+                <li class="selected-cases__item">
+                  <div class="selected-cases__box project-box" style="background-image: url('./images/projects/project-1.jpg');">
+                      <div class="selected-cases__content project-content">
+                        <ul class="selected-cases__tags project-tags">
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              СММ
+                            </div>
+                          </li>
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              Брендинг
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="selected-cases__wrap project-wrap">
+                          <div class="selected-cases__wrap-overlay project-wrap-overlay">
+                            <h3 class="selected-cases__label project-label">
+                              Название проекта
+                            </h3>
+                            <p class="selected-cases__text project-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, maiores.
+                            </p>
+                            <div class="selected-cases__overlay project-overlay">
+                              <a class="selected-cases__link project-link button-primary" href="#">
+                                Подробнее
+                                <span>
+                                  <img src="./images/icons/arrow-right-white.svg" alt="arrow" loading="lazy" width="20" height="20">
+                                </span>
+                              </a>
+                              <div class="selected-cases__company project-company">
+                                Название компании
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="selected-cases__item">
+                  <div class="selected-cases__box project-box" style="background-image: url('./images/projects/project-1.jpg');">
+                      <div class="selected-cases__content project-content">
+                        <ul class="selected-cases__tags project-tags">
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              СММ
+                            </div>
+                          </li>
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              Брендинг
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="selected-cases__wrap project-wrap">
+                          <div class="selected-cases__wrap-overlay project-wrap-overlay">
+                            <h3 class="selected-cases__label project-label">
+                              Название проекта
+                            </h3>
+                            <p class="selected-cases__text project-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, maiores.
+                            </p>
+                            <div class="selected-cases__overlay project-overlay">
+                              <a class="selected-cases__link project-link button-primary" href="#">
+                                Подробнее
+                                <span>
+                                  <img src="./images/icons/arrow-right-white.svg" alt="arrow" loading="lazy" width="20" height="20">
+                                </span>
+                              </a>
+                              <div class="selected-cases__company project-company">
+                                Название компании
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="selected-cases__item">
+                  <div class="selected-cases__box project-box" style="background-image: url('./images/projects/project-1.jpg');">
+                      <div class="selected-cases__content project-content">
+                        <ul class="selected-cases__tags project-tags">
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              СММ
+                            </div>
+                          </li>
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              Брендинг
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="selected-cases__wrap project-wrap">
+                          <div class="selected-cases__wrap-overlay project-wrap-overlay">
+                            <h3 class="selected-cases__label project-label">
+                              Название проекта
+                            </h3>
+                            <p class="selected-cases__text project-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, maiores.
+                            </p>
+                            <div class="selected-cases__overlay project-overlay">
+                              <a class="selected-cases__link project-link button-primary" href="#">
+                                Подробнее
+                                <span>
+                                  <img src="./images/icons/arrow-right-white.svg" alt="arrow" loading="lazy" width="20" height="20">
+                                </span>
+                              </a>
+                              <div class="selected-cases__company project-company">
+                                Название компании
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="selected-cases__item">
+                  <div class="selected-cases__box project-box" style="background-image: url('./images/projects/project-1.jpg');">
+                      <div class="selected-cases__content project-content">
+                        <ul class="selected-cases__tags project-tags">
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              СММ
+                            </div>
+                          </li>
+                          <li class="selected-cases__tag project-tag">
+                            <div class="selected-cases__tag-box project-tag-box bg-filter">
+                              Брендинг
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="selected-cases__wrap project-wrap">
+                          <div class="selected-cases__wrap-overlay project-wrap-overlay">
+                            <h3 class="selected-cases__label project-label">
+                              Название проекта
+                            </h3>
+                            <p class="selected-cases__text project-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, maiores.
+                            </p>
+                            <div class="selected-cases__overlay project-overlay">
+                              <a class="selected-cases__link project-link button-primary" href="#">
+                                Подробнее
+                                <span>
+                                  <img src="./images/icons/arrow-right-white.svg" alt="arrow" loading="lazy" width="20" height="20">
+                                </span>
+                              </a>
+                              <div class="selected-cases__company project-company">
+                                Название компании
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+              </ul>
+              <a class="selected-cases__link-second button-primary" href="#">
+                Посмотреть кейсы
+                <span>
+                  <img 
+                    src="./images/icons/arrow-right-white.svg" 
+                    alt="arrow" 
+                    loading="lazy" 
+                    width="20" 
+                    height="20"
+                  >
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="callback padding-inline-container">
+          <div class="container">
+            <div class="callback__inner">
+              <div class="callback__wrapper">
+                <h2 class="callback__title section-title mb-sm">
+                  Готовы масштабировать бизнес?
+                </h2>
+                <p class="callback__text mb-sm">
+                  Запишитесь на консультацию, и мы обсудим, какая стратегия подходит именно вам.
+                </p>
+                <button class="callback__button button-primary" type="button">
+                  Обсудить проект
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__top padding-inline-container">
+          <div class="container">
+            <div class="footer__top-inner">
+              <div class="footer__content">
+                <a class="footer__logo" href="#">
+                  <img 
+                    src="./images/footer/logo.svg" 
+                    alt="abba marketing" 
+                    loading="lazy" 
+                    width="162" 
+                    height="48" 
+                  />
+                </a>
+                <div class="footer__text">
+                    Маркетинговое агентство Abba работает на рынке Узбекистана уже более 7 лет. На данный момент мы успешно завершили более 1500 проектов. В настоящее время в нашем агентстве работает более 120 сотрудников и одновременно мы сотрудничаем около 100 компаниями.
+                </div>
+                <a class="footer__presentation bg-filter" href="#">
+                  Скачать презентацию
+                </a>
+              </div>
+              <div class="footer__navs">
+                <nav class="footer__nav">
+                  <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                      <a class="footer__nav-link" href="#">
+                        Главная страница
+                      </a>
+                    </li>
+                    <li class="footer__nav-item">
+                      <a class="footer__nav-link" href="#">
+                        Портфолио
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <nav class="footer__nav">
+                  <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                      <a class="footer__nav-link" href="#">
+                        Услуги
+                      </a>
+                      <ul class="footer__nav-sublist">
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Маркетинговое исследование
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Брендинг
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            SMM
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Веб-разработка
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Дизайн упаковки
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <nav class="footer__nav">
+                  <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                      <a class="footer__nav-link" href="#">
+                        Новости
+                      </a>
+                      <ul class="footer__nav-sublist">
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Блог
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Новости компании
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Статья
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            Behance
+                          </a>
+                        </li>
+                        <li class="footer__nav-subitem">
+                          <a class="footer__nav-sublink" href="#">
+                            LinkedIn
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <ul class="footer__contacts">
+                <li class="footer__contact">
+                  <div class="footer__contact-box">
+                    <div class="footer__contact-left">
+                      <h4 class="footer__contact-label">
+                        Номер телефона:
+                      </h4>
+                      <div class="footer__contact-text">
+                        +998 91 925 45 85
+                      </div>
+                    </div>
+                    <div class="footer__contact-service">
+                      Telegram
+                    </div>
+                  </div>
+                </li>
+                <li class="footer__contact">
+                  <div class="footer__contact-box">
+                    <div class="footer__contact-left">
+                      <h4 class="footer__contact-label">
+                        Электронная почта:
+                      </h4>
+                      <div class="footer__contact-text">
+                        hello@abbagency.uz
+                      </div>
+                    </div>
+                    <div class="footer__contact-service"></div>
+                  </div>
+                </li>
+                <li class="footer__contact">
+                  <div class="footer__contact-box">
+                    <div class="footer__contact-left">
+                      <h4 class="footer__contact-label">
+                        Наш адрес:
+                      </h4>
+                      <div class="footer__contact-text">
+                        Ташкент, ул. Ойбек, 34
+                      </div>
+                    </div>
+                    <div class="footer__contact-service">
+                      Yandex Maps
+                    </div>
+                  </div>
+                </li>
+                <li class="footer__contact">
+                  <div class="footer__contact-box">
+                    <div class="footer__contact-left">
+                      <h4 class="footer__contact-label">
+                        График работы:
+                      </h4>
+                      <div class="footer__contact-text">
+                        10:00–19:00 / Пн–Пт
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom padding-inline-container">
+          <div class="container">
+            <div class="footer__bottom-inner">
+              <div class="footer__label map">
+                Карта сайта
+              </div>
+              <a class="footer__label privacy-policy" href="#">
+                Политика конфиденциальности
+              </a>
+              <div class="footer__label legal">
+                Все права защищены.
+              </div>
+              <div class="footer__label copyright">
+                © 2019-2025 Маркетинговое агентство в Ташкенте
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

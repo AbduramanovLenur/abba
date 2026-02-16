@@ -1,0 +1,57 @@
+.selected-cases {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  &__description {
+    color: #373737;
+    max-width: 769px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+  &__link {
+    &-first {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    &-second {
+      display: none;
+      margin-inline: auto;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 480px) {
+      gap: 10px;
+    }
+  }
+  &__box {
+    min-height: 425px;
+    @media (max-width: 1024px) {
+      min-height: 400px;
+    }
+    @media (max-width: 768px) {
+      min-height: 380px;
+    }
+    @media (max-width: 480px) {
+      min-height: 360px;
+    }
+  }
+}

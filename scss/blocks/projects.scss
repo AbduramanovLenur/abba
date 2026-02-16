@@ -1,0 +1,64 @@
+.projects {
+  background-image: url("./../images/projects/gradient-bg.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__inner {
+    padding-block: 64px;
+    @media (max-width: 1024px) {
+      padding-block: 48px;
+    }
+    @media (max-width: 768px) {
+      padding-block: 40px;
+    }
+    @media (max-width: 480px) {
+      padding-block: 32px;
+    }
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  &__link {
+    &-first {
+      white-space: nowrap;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    &-second {
+      display: none;
+      margin-inline: auto;
+      white-space: nowrap;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+  &__box {
+    min-height: 425px;
+    @media (max-width: 1024px) {
+      min-height: 400px;
+    }
+    @media (max-width: 768px) {
+      min-height: 380px;
+    }
+    @media (max-width: 480px) {
+      min-height: 360px;
+    }
+  }
+}
