@@ -92,6 +92,77 @@ function initSwiper(selector, options = {}) {
   return instance;
 }
 
+const initFaqAccordion = (
+  root,
+  item,
+  header,
+  overlay,
+  active,
+  options = {},
+) => {
+  const faq = document.querySelector(root);
+
+  if (!faq) return;
+
+  const settings = {
+    duration: 300,
+    single: true,
+    ...options,
+  };
+
+  const items = faq.querySelectorAll(item);
+
+  const setHeight = (el, value) => {
+    el.style.height = value;
+  };
+
+  const open = (box, wrapper) => {
+    box.classList.add(active);
+
+    setHeight(wrapper, wrapper.scrollHeight + "px");
+
+    wrapper.addEventListener(
+      "transitionend",
+      () => setHeight(wrapper, "auto"),
+      { once: true },
+    );
+  };
+
+  const close = (box, wrapper) => {
+    setHeight(wrapper, wrapper.scrollHeight + "px");
+
+    requestAnimationFrame(() => {
+      setHeight(wrapper, "0px");
+    });
+
+    box.classList.remove(active);
+  };
+
+  const closeAll = (current) => {
+    items.forEach((item) => {
+      if (item !== current) {
+        const wrapper = item.querySelector(overlay);
+        close(item, wrapper);
+      }
+    });
+  };
+
+  items.forEach((box) => {
+    const head = box.querySelector(header);
+    const wrapper = box.querySelector(overlay);
+
+    head.addEventListener("click", () => {
+      const isOpen = box.classList.contains(active);
+
+      if (settings.single) closeAll(box);
+
+      isOpen ? close(box, wrapper) : open(box, wrapper);
+    });
+
+    wrapper.style.transitionDuration = `${settings.duration}ms`;
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
@@ -113,4 +184,16 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 8,
     freeMode: true,
   });
+
+  initFaqAccordion(
+    ".faq",
+    ".faq__box",
+    ".faq__head",
+    ".faq__wrapper",
+    "is-open",
+    {
+      single: true,
+      duration: 400,
+    },
+  );
 });
