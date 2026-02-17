@@ -1,0 +1,56 @@
+.partners {
+  background-color: #f5f5f5;
+  &__overlay {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  &__button {
+    &-first {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    &-second {
+      display: none;
+      margin-inline: auto;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+  &__text {
+    max-width: 796px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 32px;
+    }
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__box {
+    border-radius: 32px;
+    overflow: hidden;
+  }
+}
