@@ -257,6 +257,9 @@ main {
   }
   &-text {
     color: #717171;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
     @media (max-width: 480px) {
       font-size: 14px;
     }
@@ -264,6 +267,32 @@ main {
   &-date {
     color: var(--blue);
     margin-top: 16px;
+  }
+  &-advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  &-overlay {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  &-circle {
+    width: 12px;
+    height: 12px;
+    background-color: var(--blue);
+    border-radius: 50%;
+  }
+  &-value {
+    color: var(--blue);
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
   }
 }
 
