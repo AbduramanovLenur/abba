@@ -145,9 +145,9 @@
               </ul>
             </div>
             <a class="header__presentation bg-filter" href="google.com" download">Скачать презентацию</a>
-            <a class="header__callback button-primary" href="#">
+            <button class="header__callback button-primary" type="button" data-js-button-modal>
               Обсудить проект
-            </a>
+            </button>
             <div class="header__burger bg-filter">
               <span></span>
               <span></span>
@@ -675,8 +675,45 @@
           </div>
         </div>
       </footer>
+      <div class="callback-modal">
+        <div class="callback-modal__overlay">
+          <div class="callback-modal__content">
+            <h3 class="callback-modal__title section-title mb-sm">
+              Нужен мощный SMM?
+            </h3>
+            <p class="callback-modal__text mb-sm">
+              Получите полный бизнес чекап для оценки состояния вашей компании и выявления возможностей для роста.
+            </p>
+            <form class="callback-modal__form" method="post">
+              <div class="callback-modal__form-wrapper mb-sm">
+                <label class="callback-modal__label">
+                  Имя
+                  <input class="callback-modal__field" type="text" name="name" placeholder="Введите ваше имя" required>
+                </label>
+                <label class="callback-modal__label">
+                  Электронная почта
+                  <input class="callback-modal__field" type="text" name="email" placeholder="Электронная почта" required>
+                </label>
+              </div>
+              <button class="callback-modal__submit button-primary" type="submit">
+                Связаться
+              </button>
+            </form>
+          </div>
+          <div class="callback-modal__picture" style="background-image: url('./images/modal-callback/bg-1.webp');">
+          </div>
+          <div class="callback-modal__close">
+            <img 
+              src="./images/icons/close.svg" 
+              alt="close icon"
+              loading="lazy"
+              width="24"
+              height="24"
+            >
+          </div>
+        </div>
+      </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
   </body>

@@ -807,3 +807,123 @@ main {
     grid-column: span 1;
   }
 }
+
+.callback-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(19, 26, 38, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__overlay {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1079px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 32px;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    background:
+      radial-gradient(
+        103% 110% at 50% -6%,
+        rgba(16, 126, 237, 0),
+        rgba(16, 126, 237, 0.1)
+      ),
+      radial-gradient(
+        106% 101% at 50% 69%,
+        rgba(16, 126, 237, 0),
+        rgba(16, 126, 237, 0.1)
+      ),
+      rgba(255, 255, 255, 1);
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__content {
+    padding: 48px;
+    @media (max-width: 1024px) {
+      padding: 32px;
+    }
+    @media (max-width: 480px) {
+      padding: 24px;
+    }
+  }
+  &__title {
+    @media (max-width: 768px) {
+      max-width: 85%;
+      width: 100%;
+    }
+    @media (max-width: 480px) {
+      max-width: 75%;
+    }
+  }
+  &__text {
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+  &__form {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      @media (max-width: 600px) {
+        gap: 10px;
+      }
+    }
+  }
+  &__label {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+  &__field {
+    font-size: 16px;
+    padding: 0 24px;
+    height: 48px;
+    border: 1px solid #ececec;
+    color: #717171;
+    background-color: #fff;
+    border-radius: 51px;
+    @media (max-width: 600px) {
+      font-size: 14px;
+      height: 40px;
+    }
+  }
+  &__picture {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+}

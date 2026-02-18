@@ -163,6 +163,45 @@ const initFaqAccordion = (
   });
 };
 
+function initModal({
+  modalSelector,
+  openBtnSelector,
+  closeBtnSelector,
+  overlaySelector,
+  activeClass = "is-open",
+}) {
+  const modal = document.querySelector(modalSelector);
+  if (!modal) return;
+
+  const overlay = modal.querySelector(overlaySelector);
+  const closeBtn = modal.querySelector(closeBtnSelector);
+  const openButtons = document.querySelectorAll(openBtnSelector);
+
+  const open = () => {
+    modal.classList.add(activeClass);
+    document.body.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    modal.classList.remove(activeClass);
+    document.body.style.overflow = "";
+  };
+
+  openButtons.forEach((btn) => {
+    btn.addEventListener("click", open);
+  });
+
+  closeBtn?.addEventListener("click", close);
+
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
@@ -196,4 +235,11 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 400,
     },
   );
+
+  initModal({
+    modalSelector: ".callback-modal",
+    openBtnSelector: "[data-js-button-modal]",
+    closeBtnSelector: ".callback-modal__close",
+    overlaySelector: ".callback-modal__overlay",
+  });
 });

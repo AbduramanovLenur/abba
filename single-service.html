@@ -141,9 +141,9 @@
               </ul>
             </div>
             <a class="header__presentation bg-filter" href="google.com" download">Скачать презентацию</a>
-            <a class="header__callback button-primary" href="#">
+            <button class="header__callback button-primary" type="button" data-js-button-modal>
               Обсудить проект
-            </a>
+            </и>
             <div class="header__burger bg-filter">
               <span></span>
               <span></span>
@@ -485,6 +485,80 @@
             </div>
           </div>
         </section>
+        <section class="work-process padding-inline-container">
+          <div class="container">
+            <div class="work-process__inner padding-big-block-container">
+              <h2 class="work-process__title section-title mb-sm">
+                Процесс работы
+              </h2>
+              <p class="work-process__text mb-md">
+                Мы используем системный подход Colba. Каждый этап логически вытекает из предыдущего, исключая догадки.
+              </p>
+              <ul class="work-process__grid">
+                <li class="work-process__item">
+                  <div class="work-process__box">
+                    <div class="work-process__wrapper">
+                      <div class="work-process__step">
+                        Step I
+                      </div>
+                      <h3 class="work-process__label">
+                        Как рождается имя бренда
+                      </h3>
+                      <p class="work-process__content">
+                        Нейминг — это не творчество ради творчества. Это сложный процесс поиска смысла, который можно защитить юридически.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="work-process__item">
+                  <div class="work-process__box">
+                    <div class="work-process__wrapper">
+                      <div class="work-process__step">
+                        Step I
+                      </div>
+                      <h3 class="work-process__label">
+                        Как рождается имя бренда
+                      </h3>
+                      <p class="work-process__content">
+                        Нейминг — это не творчество ради творчества. Это сложный процесс поиска смысла, который можно защитить юридически.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="work-process__item">
+                  <div class="work-process__box">
+                    <div class="work-process__wrapper">
+                      <div class="work-process__step">
+                        Step I
+                      </div>
+                      <h3 class="work-process__label">
+                        Как рождается имя бренда
+                      </h3>
+                      <p class="work-process__content">
+                        Нейминг — это не творчество ради творчества. Это сложный процесс поиска смысла, который можно защитить юридически.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="work-process__item">
+                  <div class="work-process__box">
+                    <div class="work-process__wrapper">
+                      <div class="work-process__step">
+                        Step I
+                      </div>
+                      <h3 class="work-process__label">
+                        Как рождается имя бренда
+                      </h3>
+                      <p class="work-process__content">
+                        Нейминг — это не творчество ради творчества. Это сложный процесс поиска смысла, который можно защитить юридически.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <section class="price padding-inline-container">
           <div class="container">
             <div class="price__inner padding-big-block-container">
@@ -503,9 +577,9 @@
                 <div class="price__description">
                   У нас есть дополнительное предложение для вас)
                 </div>
-                <a class="price__button button-primary" href="#">
+                <button class="price__button button-primary" type="button" data-js-button-modal>
                   Обсудить проект
-                </a>
+                </и>
               </div>
             </div>
           </div>
@@ -692,7 +766,7 @@
                   <h2 class="partners__title section-title">
                     Нам доверяют
                   </h2>
-                  <button class="partners__button-first button-primary" type="button">
+                  <button class="partners__button-first button-primary" type="button" data-js-button-modal>
                     Обсудить проект
                     <span>
                       <img 
@@ -776,7 +850,7 @@
                     </div>
                   </li>
                 </ul>
-                <button class="partners__button-second button-primary" type="button">
+                <button class="partners__button-second button-primary" type="button" data-js-button-modal>
                   Обсудить проект
                   <span>
                     <img 
@@ -1107,7 +1181,7 @@
                 <p class="callback__text mb-sm">
                   Запишитесь на консультацию, и мы обсудим, какая стратегия подходит именно вам.
                 </p>
-                <button class="callback__button button-primary" type="button">
+                <button class="callback__button button-primary" type="button" data-js-button-modal>
                   Обсудить проект
                 </button>
               </div>
@@ -1303,6 +1377,44 @@
           </div>
         </div>
       </footer>
+      <div class="callback-modal">
+        <div class="callback-modal__overlay">
+          <div class="callback-modal__content">
+            <h3 class="callback-modal__title section-title mb-sm">
+              Нужен мощный SMM?
+            </h3>
+            <p class="callback-modal__text mb-sm">
+              Получите полный бизнес чекап для оценки состояния вашей компании и выявления возможностей для роста.
+            </p>
+            <form class="callback-modal__form" method="post">
+              <div class="callback-modal__form-wrapper mb-sm">
+                <label class="callback-modal__label">
+                  Имя
+                  <input class="callback-modal__field" type="text" name="name" placeholder="Введите ваше имя" required>
+                </label>
+                <label class="callback-modal__label">
+                  Электронная почта
+                  <input class="callback-modal__field" type="text" name="email" placeholder="Электронная почта" required>
+                </label>
+              </div>
+              <button class="callback-modal__submit button-primary" type="submit">
+                Связаться
+              </button>
+            </form>
+          </div>
+          <div class="callback-modal__picture" style="background-image: url('./images/modal-callback/bg-1.webp');">
+          </div>
+          <div class="callback-modal__close">
+            <img 
+              src="./images/icons/close.svg" 
+              alt="close icon"
+              loading="lazy"
+              width="24"
+              height="24"
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./js/main.js"></script>
   </body>
