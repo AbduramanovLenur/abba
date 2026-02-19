@@ -202,6 +202,24 @@ function initModal({
   });
 }
 
+function updateMapSrc() {
+  const iframe = document.querySelector(".map__iframe iframe");
+  if (!iframe) return;
+
+  const width = window.innerWidth;
+
+  if (width >= 1024) {
+    iframe.src = iframe.dataset.desktopSrc;
+    console.log("d");
+  } else if (width >= 768) {
+    iframe.src = iframe.dataset.tableSrc;
+    console.log("t");
+  } else if (width >= 320) {
+    iframe.src = iframe.dataset.mobileSrc;
+    console.log("m");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
@@ -242,4 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeBtnSelector: ".callback-modal__close",
     overlaySelector: ".callback-modal__overlay",
   });
+
+  updateMapSrc();
+  window.addEventListener("resize", updateMapSrc);
 });
