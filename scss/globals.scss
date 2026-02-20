@@ -112,16 +112,19 @@ svg {
 main {
   flex: 1;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
 }
+
 .container {
   padding-inline: var(--grid-padding);
   margin-inline: auto;
 }
+
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -135,12 +138,14 @@ main {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
 .padding-inline-container {
   padding-inline: 85px;
   @media (max-width: 1024px) {
     padding-inline: 0;
   }
 }
+
 .button-primary {
   display: flex;
   align-items: center;
@@ -156,13 +161,21 @@ main {
   color: var(--white);
   max-width: max-content;
   transition: 0.5s;
+  span {
+    transition: 0.5s;
+  }
   @media (max-width: 1024px) {
     font-size: 12px;
     height: 40px;
     padding-inline: 15px;
   }
-  &:hover {
-    background-color: var(--hover-main-button);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--hover-main-button);
+      span {
+        transform: translateX(5px);
+      }
+    }
   }
 }
 

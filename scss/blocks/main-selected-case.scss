@@ -1,0 +1,127 @@
+.main-selected-case {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  &__link {
+    &-first {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    &-second {
+      display: none;
+      margin-inline: auto;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__item {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(9),
+    &:nth-child(10),
+    &:nth-child(11) {
+      grid-column: span 4;
+      @media (max-width: 1024px) {
+        grid-column: initial;
+      }
+      @media (max-width: 600px) {
+        grid-column: span 2;
+      }
+      .main-selected-case {
+        &__picture {
+          @media (max-width: 600px) {
+            height: 270px;
+          }
+        }
+      }
+    }
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(15),
+    &:nth-child(16) {
+      grid-column: span 3;
+      @media (max-width: 1024px) {
+        grid-column: initial;
+      }
+    }
+    &:nth-child(6),
+    &:nth-child(12) {
+      grid-column: span 6;
+      grid-row: span 2;
+      @media (max-width: 1024px) {
+        grid-column: initial;
+        grid-row: initial;
+      }
+      @media (max-width: 600px) {
+        grid-column: span 2;
+      }
+      .main-selected-case {
+        &__picture {
+          @media (max-width: 600px) {
+            height: 270px;
+          }
+        }
+      }
+    }
+  }
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__picture {
+    border-radius: 32px;
+    overflow: hidden;
+    @media (max-width: 1024px) {
+      height: 150px;
+    }
+    @media (max-width: 900px) {
+      height: 250px;
+    }
+    @media (max-width: 640px) {
+      height: 200px;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__link {
+    font-weight: 600;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

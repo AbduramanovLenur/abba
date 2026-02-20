@@ -210,13 +210,10 @@ function updateMapSrc() {
 
   if (width >= 1024) {
     iframe.src = iframe.dataset.desktopSrc;
-    console.log("d");
   } else if (width >= 768) {
     iframe.src = iframe.dataset.tableSrc;
-    console.log("t");
   } else if (width >= 320) {
     iframe.src = iframe.dataset.mobileSrc;
-    console.log("m");
   }
 }
 
@@ -263,4 +260,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMapSrc();
   window.addEventListener("resize", updateMapSrc);
+
+  initSwiper(".main-news__swiper", {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    freeMode: true,
+    navigation: {
+      nextEl: ".main-news__button-next",
+      prevEl: ".main-news__button-prev",
+    },
+    breakpoints: {
+      1025: {
+        slidesPerView: 4,
+      },
+      769: {
+        slidesPerView: 3,
+      },
+      482: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    },
+  });
 });
