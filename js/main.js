@@ -284,4 +284,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
+  initSwiper(".main-intro__swiper", {
+    slidesPerView: 1,
+    pagination: {
+      el: ".main-intro__pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".main-intro__button-next",
+      prevEl: ".main-intro__button-prev",
+    },
+  });
 });
