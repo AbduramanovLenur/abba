@@ -65,6 +65,9 @@
     display: flex;
     align-items: center;
   }
+  &__box {
+    position: relative;
+  }
   &__link {
     font-size: 15px;
     font-weight: 600;
@@ -83,6 +86,116 @@
       transform: rotate(45deg);
       transition: transform 0.3s ease;
       color: var(--white);
+    }
+  }
+  &__sub {
+    &-list {
+      position: absolute;
+      top: 130%;
+      left: 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      padding: 8px;
+      border-radius: 24px;
+      backdrop-filter: blur(8px);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(192.48, 192.48, 192.48, 0.1) 0%,
+          rgba(90.48, 90.48, 90.48, 0.1) 48.558%,
+          rgba(192.48, 192.48, 192.48, 0.1) 100%
+        ),
+        rgba(19, 26, 38, 0.15);
+      z-index: 80;
+      visibility: hidden;
+      opacity: 0;
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &-box {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 16px;
+      border-radius: 16px;
+      transition: 0.5s;
+      height: 100%;
+      min-height: 76px;
+      width: 222px;
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--blue);
+        }
+      }
+    }
+    &-link {
+      height: 100%;
+      color: var(--white);
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+    }
+    &-icon {
+      flex-shrink: 0;
+    }
+    &-sub {
+      &-list {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 8px;
+        border-radius: 24px;
+        backdrop-filter: blur(8px);
+        background:
+          linear-gradient(
+            180deg,
+            rgba(192.48, 192.48, 192.48, 0.1) 0%,
+            rgba(90.48, 90.48, 90.48, 0.1) 48.558%,
+            rgba(192.48, 192.48, 192.48, 0.1) 100%
+          ),
+          rgba(19, 26, 38, 0.15);
+        z-index: 80;
+        visibility: hidden;
+        opacity: 0;
+        &.is-open-sub {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      &-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 16px;
+        border-radius: 16px;
+        transition: 0.5s;
+        height: 100%;
+        min-height: 76px;
+        width: 222px;
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--blue);
+          }
+        }
+      }
+      &-link {
+        height: 100%;
+        color: var(--white);
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+        }
+      }
+      &-icon {
+        flex-shrink: 0;
+      }
     }
   }
   &__mail,
@@ -143,7 +256,6 @@
       border-radius: 50px;
     }
     @media (max-width: 480px) {
-      display: none;
       margin-left: auto;
       margin-right: 0;
     }
@@ -248,7 +360,6 @@
       display: flex;
     }
     @media (max-width: 480px) {
-      margin-left: auto;
       height: 48px;
       width: 48px;
     }

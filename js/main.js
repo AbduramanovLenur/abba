@@ -217,6 +217,130 @@ function updateMapSrc() {
   }
 }
 
+function initMenuDropdown({
+  overlaySelector,
+  triggerSelector,
+  dropdownSelector,
+  subBoxSelector,
+  subSubListSelector,
+  bodyOpenClass,
+  activeClass,
+  subActiveClass,
+}) {
+  const triggers = document.querySelectorAll(triggerSelector);
+  const body = document.body;
+
+  if (!triggers.length) return;
+
+  const closeMenu = () => {
+    document.querySelectorAll(`.${activeClass}`).forEach((el) => {
+      el.classList.remove(activeClass);
+    });
+
+    document.querySelectorAll(`.${subActiveClass}`).forEach((el) => {
+      el.classList.remove(subActiveClass);
+    });
+
+    body.classList.remove(bodyOpenClass);
+  };
+
+  const closeAllSubMenus = () => {
+    document.querySelectorAll(`.${subActiveClass}`).forEach((el) => {
+      el.classList.remove(subActiveClass);
+    });
+  };
+
+  triggers.forEach((trigger) => {
+    const parent = trigger.closest(overlaySelector);
+    const dropdown = parent?.querySelector(dropdownSelector);
+
+    if (!dropdown) return;
+
+    trigger.addEventListener("mouseenter", () => {
+      closeMenu();
+      dropdown.classList.add(activeClass);
+      body.classList.add(bodyOpenClass);
+
+      const subBoxes = parent.querySelectorAll(subBoxSelector);
+
+      if (subBoxes.length) {
+        subBoxes.forEach((subBox) => {
+          subBox.addEventListener("mouseenter", () => {
+            closeAllSubMenus();
+
+            const subSubList = subBox.querySelector(subSubListSelector);
+            if (subSubList) {
+              subSubList.classList.add(subActiveClass);
+            }
+          });
+        });
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!body.classList.contains(bodyOpenClass)) return;
+
+    const isInsideMenu = e.target.closest(triggerSelector);
+    const isInsideDropdown = e.target.closest(dropdownSelector);
+
+    if (isInsideMenu || isInsideDropdown) return;
+
+    closeMenu();
+  });
+
+  window.addEventListener("scroll", () => {
+    if (!body.classList.contains(bodyOpenClass)) return;
+    closeMenu();
+  });
+}
+
+const initPositionSubSubMenu = ({
+  subListSelector,
+  subSubListSelector,
+  subBoxSelector,
+}) => {
+  const subMenuList = document.querySelectorAll(subListSelector);
+
+  if (!subMenuList.length) return;
+
+  subMenuList.forEach((subMenu) => {
+    const subSubMenuList = subMenu.querySelectorAll(subSubListSelector);
+    const subBoxList = subMenu.querySelectorAll(subBoxSelector);
+
+    if (!subSubMenuList.length) return;
+
+    subSubMenuList.forEach((subSubMenu, index) => {
+      const subBoxListArray = Array.from(subBoxList);
+      const width = subBoxListArray.reduce((acc, el, i) => {
+        if (i < index) {
+          return acc + el.offsetWidth;
+        }
+        return acc;
+      }, 0);
+
+      subSubMenu.style.top = `${subMenu.offsetHeight}px`;
+      subSubMenu.style.left = `-${width + 10}px`;
+    });
+  });
+};
+
+const initMobileModal = (openSelector, closeSelector, overlaySelector) => {
+  const openBtn = document.querySelector(openSelector);
+  const closeBtn = document.querySelector(closeSelector);
+  const overlay = document.querySelector(overlaySelector);
+
+  if (!openBtn || !closeBtn || !overlay) return;
+
+  openBtn.addEventListener("click", () => {
+    overlay.classList.add("is-open");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    overlay.classList.remove("is-open");
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
@@ -295,4 +419,35 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".main-intro__button-prev",
     },
   });
+
+  initMenuDropdown({
+    triggerSelector: "[data-js-button-menu]",
+    overlaySelector: ".header__box",
+    dropdownSelector: ".header__sub-list",
+    subBoxSelector: ".header__sub-box",
+    subSubListSelector: ".header__sub-sub-list",
+    bodyOpenClass: "is-open-menu",
+    activeClass: "is-open",
+    subActiveClass: "is-open-sub",
+  });
+
+  initPositionSubSubMenu({
+    subListSelector: ".header__sub-list",
+    subSubListSelector: ".header__sub-sub-list",
+    subBoxSelector: ".header__sub-box",
+  });
+
+  initMobileModal(".header__burger", ".mobile-modal__close", ".mobile-modal");
+
+  initFaqAccordion(
+    ".mobile-modal__list",
+    ".mobile-modal__box",
+    ".mobile-modal__head",
+    ".mobile-modal__wrapper",
+    "is-open",
+    {
+      single: true,
+      duration: 400,
+    },
+  );
 });
