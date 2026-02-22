@@ -112,6 +112,8 @@ const initFaqAccordion = (
 
   const items = faq.querySelectorAll(item);
 
+  if (!items.length) return;
+
   const setHeight = (el, value) => {
     el.style.height = value;
   };
@@ -142,6 +144,9 @@ const initFaqAccordion = (
     items.forEach((item) => {
       if (item !== current) {
         const wrapper = item.querySelector(overlay);
+
+        if (!wrapper) return;
+
         close(item, wrapper);
       }
     });
@@ -150,6 +155,8 @@ const initFaqAccordion = (
   items.forEach((box) => {
     const head = box.querySelector(header);
     const wrapper = box.querySelector(overlay);
+
+    if (!head || !wrapper) return;
 
     head.addEventListener("click", () => {
       const isOpen = box.classList.contains(active);
@@ -168,6 +175,7 @@ function initModal({
   openBtnSelector,
   closeBtnSelector,
   overlaySelector,
+  mobileMenuSelector,
   activeClass = "is-open",
 }) {
   const modal = document.querySelector(modalSelector);
@@ -176,10 +184,19 @@ function initModal({
   const overlay = modal.querySelector(overlaySelector);
   const closeBtn = modal.querySelector(closeBtnSelector);
   const openButtons = document.querySelectorAll(openBtnSelector);
+  const menu = document.querySelector(mobileMenuSelector);
+
+  const closeMobileMenu = () => {
+    if (menu) menu.classList.remove(activeClass);
+  };
 
   const open = () => {
     modal.classList.add(activeClass);
     document.body.style.overflow = "hidden";
+
+    if (menu.classList.contains(activeClass)) {
+      closeMobileMenu();
+    }
   };
 
   const close = () => {
@@ -380,6 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
     openBtnSelector: "[data-js-button-modal]",
     closeBtnSelector: ".callback-modal__close",
     overlaySelector: ".callback-modal__overlay",
+    mobileMenuSelector: ".mobile-modal",
   });
 
   updateMapSrc();
@@ -440,10 +458,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileModal(".header__burger", ".mobile-modal__close", ".mobile-modal");
 
   initFaqAccordion(
-    ".mobile-modal__list",
-    ".mobile-modal__box",
-    ".mobile-modal__head",
-    ".mobile-modal__wrapper",
+    "[data-js-modal-list]",
+    "[data-js-modal-box]",
+    "[data-js-modal-head]",
+    "[data-js-modal-wrapper]",
+    "is-open",
+    {
+      single: true,
+      duration: 400,
+    },
+  );
+
+  initFaqAccordion(
+    "[data-js-modal-sub-list]",
+    "[data-js-modal-sub-box]",
+    "[data-js-modal-sub-head]",
+    "[data-js-modal-sub-wrapper]",
     "is-open",
     {
       single: true,
