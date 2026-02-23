@@ -318,27 +318,42 @@ const initPositionSubSubMenu = ({
   subBoxSelector,
 }) => {
   const subMenuList = document.querySelectorAll(subListSelector);
-
   if (!subMenuList.length) return;
 
-  subMenuList.forEach((subMenu) => {
-    const subSubMenuList = subMenu.querySelectorAll(subSubListSelector);
-    const subBoxList = subMenu.querySelectorAll(subBoxSelector);
+  const calculatePositions = () => {
+    subMenuList.forEach((subMenu) => {
+      const subSubMenuList = subMenu.querySelectorAll(subSubListSelector);
+      const subBoxList = subMenu.querySelectorAll(subBoxSelector);
 
-    if (!subSubMenuList.length) return;
+      if (!subSubMenuList.length) return;
 
-    subSubMenuList.forEach((subSubMenu, index) => {
-      const subBoxListArray = Array.from(subBoxList);
-      const width = subBoxListArray.reduce((acc, el, i) => {
-        if (i < index) {
-          return acc + el.offsetWidth;
-        }
-        return acc;
-      }, 0);
+      subSubMenuList.forEach((subSubMenu, index) => {
+        const subBoxListArray = Array.from(subBoxList);
+        const width = subBoxListArray.reduce((acc, el, i) => {
+          if (i < index) {
+            return acc + el.offsetWidth;
+          }
+          return acc;
+        }, 0);
 
-      subSubMenu.style.top = `${subMenu.offsetHeight}px`;
-      subSubMenu.style.left = `-${width + 10}px`;
+        subSubMenu.style.top = `${subMenu.offsetHeight}px`;
+        subSubMenu.style.left = `-${width + 10}px`;
+      });
     });
+  };
+
+  calculatePositions();
+
+  if (document.readyState === "complete") {
+    calculatePositions();
+  } else {
+    window.addEventListener("load", calculatePositions);
+  }
+
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(calculatePositions, 100);
   });
 };
 
