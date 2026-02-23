@@ -1,20 +1,40 @@
-const adjustZoom = () => {
-  const containerWidth = Number(
-    getComputedStyle(document.documentElement)
-      .getPropertyValue("--screen-width")
-      .trim()
-      .replace("px", ""),
-  );
+const initAdjustZoom = () => {
+  const adjustZoom = () => {
+    const containerWidth = Number(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--screen-width")
+        .trim()
+        .replace("px", ""),
+    );
 
-  const wrapper = document.querySelector(".wrapper");
+    const wrapper = document.querySelector(".wrapper");
 
-  if (!wrapper || !containerWidth) return;
+    if (!wrapper || !containerWidth) return;
 
-  if (window.innerWidth > 1024) {
-    wrapper.style.zoom = (window.innerWidth / containerWidth).toString();
+    if (window.innerWidth > 1024) {
+      wrapper.style.zoom = (window.innerWidth / containerWidth).toString();
+    } else {
+      wrapper.style.zoom = "1";
+    }
+  };
+
+  adjustZoom();
+
+  if (document.readyState === "complete") {
+    adjustZoom();
   } else {
-    wrapper.style.zoom = "1";
+    window.addEventListener("load", adjustZoom);
   }
+
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(adjustZoom, 100);
+  });
+
+  window.addEventListener("orientationchange", () => {
+    setTimeout(adjustZoom, 100);
+  });
 };
 
 const initScrolledHeader = (
@@ -376,9 +396,7 @@ const initMobileModal = (openSelector, closeSelector, overlaySelector) => {
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
-  window.addEventListener("resize", adjustZoom);
-  window.addEventListener("load", adjustZoom);
-  adjustZoom();
+  initAdjustZoom();
 
   initScrolledHeader(".header", "is-changed", "header--not-scroll", 100);
 
