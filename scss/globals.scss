@@ -230,11 +230,13 @@ main {
     border-radius: 6px;
     overflow: hidden;
   }
-  &__item {
+  &__button {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     cursor: pointer;
+    width: 100%;
   }
 }
 

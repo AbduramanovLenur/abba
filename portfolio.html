@@ -373,29 +373,68 @@
               </button>
             
               <ul class="dropdown__menu header__langs-menu">
-                <li class="dropdown__item header__langs-item" data-value="RU">
-                  <img src="./images/icons/ru.svg" alt="RU" loading="lazy" width="21" height="15">
-                  RU
+                <li class="dropdown__item header__langs-item">
+                  <button
+                    class="dropdown__button header__langs-button"
+                    type="button"
+                    role="option"
+                    data-value="RU"
+                  >
+                    <img
+                      src="./images/icons/ru.svg"
+                      alt="RU"
+                      loading="lazy"
+                      width="21"
+                      height="15"
+                    />
+                    RU
+                  </button>
                 </li>
-                <li class="dropdown__item header__langs-item" data-value="UZ">
-                  <img src="./images/icons/uz.svg" alt="UZ" loading="lazy" width="21" height="15">
-                  UZ
+                <li class="dropdown__item header__langs-item">
+                  <button
+                    class="dropdown__button header__langs-button"
+                    type="button"
+                    role="option"
+                    data-value="UZ"
+                  >
+                    <img
+                      src="./images/icons/uz.svg"
+                      alt="UZ"
+                      loading="lazy"
+                      width="21"
+                      height="15"
+                    />
+                    UZ
+                  </button>
                 </li>
-                <li class="dropdown__item header__langs-item" data-value="EN">
-                  <img src="./images/icons/en.svg" alt="EN" loading="lazy" width="21" height="15">
-                  EN
+                <li class="dropdown__item header__langs-item">
+                  <button
+                    class="dropdown__button header__langs-button"
+                    type="button"
+                    role="option"
+                    data-value="EN"
+                  >
+                    <img
+                      src="./images/icons/en.svg"
+                      alt="EN"
+                      loading="lazy"
+                      width="21"
+                      height="15"
+                    />
+                    EN
+                  </button>
                 </li>
               </ul>
             </div>
-            <a class="header__presentation bg-filter" href="google.com" download">Скачать презентацию</a>
+            <a class="header__presentation bg-filter" href="google.com" download>Скачать презентацию</a>
             <button class="header__callback button-primary" type="button" data-js-button-modal>
               Обсудить проект
             </button>
-            <div class="header__burger bg-filter">
+            <button class="header__burger bg-filter" type="button">
               <span></span>
               <span></span>
               <span></span>
-            </div>
+            </button>
           </div>
         </div>
       </header>
@@ -747,7 +786,7 @@
                 <div class="footer__text">
                     Маркетинговое агентство Abba работает на рынке Узбекистана уже более 7 лет. На данный момент мы успешно завершили более 1500 проектов. В настоящее время в нашем агентстве работает более 120 сотрудников и одновременно мы сотрудничаем около 100 компаниями.
                 </div>
-                <a class="footer__presentation bg-filter" href="#">
+                <a class="footer__presentation bg-filter" download href="#">
                   Скачать презентацию
                 </a>
               </div>
@@ -846,9 +885,9 @@
                       <h4 class="footer__contact-label">
                         Номер телефона:
                       </h4>
-                      <div class="footer__contact-text">
+                      <a class="footer__contact-text" href="tel:+998919254585">
                         +998 91 925 45 85
-                      </div>
+                      </a>
                     </div>
                     <div class="footer__contact-service">
                       Telegram
@@ -861,9 +900,9 @@
                       <h4 class="footer__contact-label">
                         Электронная почта:
                       </h4>
-                      <div class="footer__contact-text">
+                      <a class="footer__contact-text" href="mailto:hello@abbagency.uz">
                         hello@abbagency.uz
-                      </div>
+                      </a>
                     </div>
                     <div class="footer__contact-service"></div>
                   </div>
@@ -874,9 +913,9 @@
                       <h4 class="footer__contact-label">
                         Наш адрес:
                       </h4>
-                      <div class="footer__contact-text">
+                      <a class="footer__contact-text" href="https://maps.google.com/?q=Ташкент,+ул.+Ойбек,+34" target="_blank" rel="noopener">
                         Ташкент, ул. Ойбек, 34
-                      </div>
+                      </a>
                     </div>
                     <div class="footer__contact-service">
                       Yandex Maps
@@ -935,7 +974,7 @@
                 </label>
                 <label class="callback-modal__label">
                   Электронная почта
-                  <input class="callback-modal__field" type="text" name="email" placeholder="Электронная почта" required>
+                  <input class="callback-modal__field" type="email" name="email" placeholder="Электронная почта" required>
                 </label>
               </div>
               <button class="callback-modal__submit button-primary" type="submit">
@@ -1081,7 +1120,7 @@
                 </a>
               </div>
               <div class="mobile-modal__buttons">
-                <a class="mobile-modal__download button-primary">
+                <a class="mobile-modal__download button-primary" download href="#">
                   Скачать презентацию
                 </a>
                 <button class="mobile-modal__button button-primary" type="button" data-js-button-modal>
