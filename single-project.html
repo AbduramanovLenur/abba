@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/fonts.min.css" />
-    <link rel="stylesheet" href="./css/variables.min.css" />
-    <link rel="stylesheet" href="./css/globals.min.css" />
-    <link rel="stylesheet" href="./css/single-project.min.css" />
+    
+    <link rel="preload" href="./css/single-project.min.css" as="style" onload="this.rel='stylesheet'">
+
     <title>Abba Single Project File</title>
   </head>
   <body>
@@ -1070,6 +1069,7 @@
         </div>
       </div>
     </div>
-    <script src="./js/main.js"></script>
+    
+    <script src="./js/main.js" defer></script>
   </body>
 </html>
