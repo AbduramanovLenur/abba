@@ -145,11 +145,12 @@
       border-radius: 32px;
       min-height: 172px;
       @media (max-width: 900px) {
-        min-height: 150px;
+        min-height: 140px;
       }
       @media (max-width: 480px) {
         align-items: flex-start;
-        min-height: 145px;
+        min-height: 115px;
+        padding: 20px;
       }
     }
     &-value {
@@ -158,10 +159,10 @@
       line-height: 1;
       color: var(--blue);
       @media (max-width: 900px) {
-        font-size: 40px;
+        font-size: 36px;
       }
       @media (max-width: 480px) {
-        font-size: 56px;
+        font-size: 30px;
       }
     }
     &-text {
