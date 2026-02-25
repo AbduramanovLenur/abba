@@ -20,21 +20,12 @@ const initAdjustZoom = () => {
 
   adjustZoom();
 
-  if (
-    document.readyState === "complete" ||
-    document.readyState === "interactive"
-  ) {
-    adjustZoom();
-  } else {
-    window.addEventListener("load", adjustZoom);
-  }
-
+  window.addEventListener("load", adjustZoom);
   let resizeTimeout;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(adjustZoom, 100);
   });
-
   window.addEventListener("orientationchange", () => {
     setTimeout(adjustZoom, 100);
   });
@@ -367,12 +358,7 @@ const initPositionSubSubMenu = ({
 
   calculatePositions();
 
-  if (document.readyState === "complete") {
-    calculatePositions();
-  } else {
-    window.addEventListener("load", calculatePositions);
-  }
-
+  window.addEventListener("load", calculatePositions);
   let resizeTimeout;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
