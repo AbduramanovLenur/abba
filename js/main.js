@@ -20,7 +20,10 @@ const initAdjustZoom = () => {
 
   adjustZoom();
 
-  if (document.readyState === "complete") {
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
     adjustZoom();
   } else {
     window.addEventListener("load", adjustZoom);
