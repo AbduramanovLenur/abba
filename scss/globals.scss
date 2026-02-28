@@ -606,6 +606,15 @@ main {
     @media (max-width: 1024px) {
       margin-bottom: 12px;
     }
+    &:nth-child(1) {
+      position: relative;
+      .careers-contact {
+        &__link {
+          position: absolute;
+          inset: 0;
+        }
+      }
+    }
   }
   &__label {
     font-size: 20px;
