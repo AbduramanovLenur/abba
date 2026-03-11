@@ -1,0 +1,117 @@
+.instagram {
+  &__slider {
+    position: relative;
+  }
+  &__swiper {
+    @media (max-width: 1024px) {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 480px) {
+      margin-bottom: 15px;
+    }
+  }
+  &__slide {
+    width: 195px;
+    height: 195px;
+    @media (max-width: 1024px) {
+      width: 150px;
+      height: 150px;
+    }
+    @media (max-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
+    @media (max-width: 480px) {
+      width: 88px;
+      height: 88px;
+    }
+    &-box {
+      border: 5px solid var(--blue);
+      padding: 5px;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      @media (max-width: 1024px) {
+        border: 4px solid var(--blue);
+      }
+      @media (max-width: 768px) {
+        border: 3px solid var(--blue);
+        padding: 3px;
+      }
+      @media (max-width: 480px) {
+        border: 2px solid var(--blue);
+        padding: 2px;
+      }
+    }
+    &-link {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__actions {
+    @media (max-width: 1024px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+  &__button {
+    &-prev,
+    &-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 88;
+      cursor: pointer;
+      &.swiper-button-disabled {
+        opacity: 0.7;
+      }
+      @media (max-width: 1024px) {
+        position: relative;
+        top: initial;
+        transform: initial;
+        width: 45px;
+        height: 45px;
+      }
+      @media (max-width: 480px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    &-prev {
+      left: -22px;
+      @media (max-width: 1024px) {
+        left: initial;
+      }
+    }
+    &-next {
+      right: -22px;
+      @media (max-width: 1024px) {
+        right: initial;
+      }
+    }
+  }
+}
+
+.fancybox__slide {
+  display: none;
+  max-width: max-content !important;
+  margin: 0 auto !important;
+  &.is-selected {
+    display: block;
+  }
+}
+
+.is-arrow {
+  display: none !important;
+}

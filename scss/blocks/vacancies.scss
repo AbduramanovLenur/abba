@@ -40,6 +40,8 @@
     }
   }
   &__box {
+    display: flex;
+    flex-direction: column;
     border-radius: 32px;
     padding: 24px;
     background-color: var(--white);
@@ -78,6 +80,7 @@
     }
   }
   &__overlay {
+    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;

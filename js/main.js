@@ -502,4 +502,16 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 400,
     },
   );
+
+  initSwiper(".instagram__swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    freeMode: true,
+    navigation: {
+      nextEl: ".instagram__button-next",
+      prevEl: ".instagram__button-prev",
+    }
+  });
+
+  Fancybox.bind("[data-fancybox='instagram']", {});
 });
